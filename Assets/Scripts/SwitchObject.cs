@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class SwitchObject : MonoBehaviour
 {
-    public GameObject objectToSwapWith;
+    public GameObject otherObject;
+   
+    private bool hasSwitchedPlaces = false;
 
-    public void Swap()
+   
+
+    public void SwitchPlaces()
     {
-        Vector3 tempPosition = transform.position;
-        transform.position = objectToSwapWith.transform.position;
-        objectToSwapWith.transform.position = tempPosition;
+        if (!hasSwitchedPlaces)
+        {
+            Vector3 tempPosition = transform.position;
+            transform.position = otherObject.transform.position;
+            otherObject.transform.position = tempPosition;
+            hasSwitchedPlaces = true;
+        }
     }
+
+    
 }

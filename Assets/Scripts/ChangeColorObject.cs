@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class ChangeColorObject : MonoBehaviour
 {
-    public Color newColor;
+    private Renderer rend;
+
+    private bool hasChangedColor = false;
+
+    void Start()
+    {
+        rend = GetComponent<Renderer>();
+     
+    }
 
     public void ChangeColor()
     {
-        Renderer renderer = GetComponent<Renderer>();
-        if (renderer != null)
+        if (!hasChangedColor)
         {
-            renderer.material.color = newColor;
+            rend.material.color = Random.ColorHSV(); // Change to a random color
+            hasChangedColor = true;
         }
     }
+
+    
 }

@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
-  - DisappearingObject
+  - LivingRoom
+  - Bedroom
+  - Kitchen
+  - fireLayer
   layers:
   - Default
   - TransparentFX
